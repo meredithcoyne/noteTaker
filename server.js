@@ -9,12 +9,18 @@ const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static('public'));
+app.use(`/api`, api);
 
-// routes
-require("./routes/apiRoutes")(app);
-require("./routes/htmlRoutes")(app);
+app.get(`/`, (req, res) => 
+res.sendFile(path.join(__dirname, '/public/index.html'))
+);
 
-//starts listening
-app.listen(PORT, function () {
-    console.log("App listening on PORT " + PORT);
-});
+
+app.get(`/notes`, (req, res) => {
+res.sendFile(path.join(__dirname, '/public/notes.html'));
+})
+
+
+app.listen(PORT, () =>
+    console.log(`listening on port ${PORT}`)    
+);

@@ -1,14 +1,25 @@
 {
   "name": "note-taker",
   "version": "1.0.0",
-  "description": "",
+  "description": "Application that allows you to write and save notes using express.js on the backend and retrieve note date from a json file.",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.4"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/meredithcoyne/noteTaker.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/meredithcoyne/noteTaker/issues"
+  },
+  "homepage": "https://github.com/meredithcoyne/noteTaker#readme"
 }
