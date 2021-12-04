@@ -1,4 +1,8 @@
 # noteTaker
+![MIT License Badge](https://img.shields.io/badge/License-MIT-yellow.svg)
+
+  ## Description
+----------------
 Application that allows you to write and save notes using express.js on the backend and retrieve note date from a json file.
 
 Note Taker application that is deployed with Heroku that uses express.js and JSON files to write and save data. 
@@ -7,29 +11,23 @@ Note Taker application that is deployed with Heroku that uses express.js and JSO
 
 ## Table of Contents
 -------------------
-* [Goals](https://github.com/meredithcoyne/noteTaker#Goals)
-* [Usage](https://github.com/meredithcoyne/noteTaker#Usage)
-* [Demo](https://github.com/meredithcoyne/noteTaker#Demo)
-* [License](https://github.com/meredithcoyne/noteTaker#License)
-* [Contacts](https://github.com/meredithcoyne/noteTaker#Contacts)
-
-## Goals
---------
-
+* [Usage](#Usage)
+* [Demo](#Demo)
+* [License](#License)
+* [Contacts](#Contacts)
 
 ## Usage
 ---------
-
+Write, Save, and Delete notes using express.js and JSON.
 
 ## Demo
 ---------
   ### Screenshots
 
   ### Videos
-  [noteTaker.gif](noteTaker.gif)
   [noteTaker.mp4](noteTaker.mp4)
 
-  [Deployed Gifthub Link]()
+  [Gifthub Repository Link](https://github.com/meredithcoyne/noteTaker)
 
 ## License
 -----------
