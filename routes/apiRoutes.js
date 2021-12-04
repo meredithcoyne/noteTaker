@@ -12,7 +12,9 @@ router.get('/notes' , (req,res) => {
 });
 
 //POST /api/notes receives new notes and adds to db.json
-
+router.post('/notes', (req, res) => {
+    store.addNote(res.json(note)).catch((err) => res.status(500).json(err));
+});
 
 
 
