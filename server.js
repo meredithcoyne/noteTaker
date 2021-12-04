@@ -15,11 +15,7 @@ app.use(`/api`, apiRoutes);
 app._router.use(`/`, htmlRoutes);
 
 
-app.get(`/notes`, (req, res) => {
-res.sendFile(path.join(__dirname, '/public/notes.html'));
-})
-
-
+// start server
 app.listen(PORT, () =>
     console.log(`listening on port ${PORT}`)    
 );
