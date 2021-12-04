@@ -1,7 +1,9 @@
-// require express, path, ./routes/apiRoutes
+// require express, ./routes/htmlRoutes, ./routes/apiRoutes
 const express = require(`express`);
-const path = require(`path`);
 const api = require(`./routes/apiRoutes`);
+const htmlRoutes = require(`./routes/htmlRoutes`);
+
+// initializing the app and creating a route
 const PORT = process.env.PORT || 3001;
 const app = express();
 
@@ -9,11 +11,8 @@ const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static('public'));
-app.use(`/api`, api);
-
-app.get(`/`, (req, res) => 
-res.sendFile(path.join(__dirname, '/public/index.html'))
-);
+app.use(`/api`, apiRoutes);
+app._router.use(`/`, htmlRoutes);
 
 
 app.get(`/notes`, (req, res) => {
