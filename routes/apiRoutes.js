@@ -1,39 +1,18 @@
 // Required files and modules
 const router = require('express').Router();
-const { readFromFile, readAndAppend, deleteNote } = require('..helper/utilis.js');
 const store = require('../db/store');
 
 
+//GET "api/notes" reads db.json 
 
-// GET route for retrieving all the notes
-router.get('/notes', (req, res) => {
-    readFromFile('./db/db.json').then((data) => res.json(JSON.parse(data)));
-})
 
-// POST route  for submitting 
-router.post('/notes', (req, res) => {
-    const { title, text } = req.body;
-    if (title && text) {
-        const newNote = {
-            title,
-            text,
-            id: uuid(),
-        };
-        // Read JSON file and append new note
-        readAndAppend(newNote, './db/db.json');
+//POST /api/notes receives new notes and adds to db.json
 
-        const response = {
-            status: 'success',
-            body: newNote,
-        };
 
-        res.json(response);
-    } else {
-        res.json('Error creating a new note');
-    }
-})
 
-//DELETE request
+
+
+//DELETE request /api/notes/:id
 router.delete('/notes/:id', (req, res) => {
     console.log(req.params.id);
     deleteNote(req.params.id, './db/db.json');
