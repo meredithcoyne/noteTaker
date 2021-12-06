@@ -1,25 +1,39 @@
 // Required files and modules
 const router = require('express').Router();
-const store = require('../db/store');
+const { readFromFile, readAndAppend, deleteNote } = require('../helper/fsUtils');
+const uuid = require('../helper/uuid');
 
 
-//GET "api/notes" reads db.json 
-router.get('/notes' , (req,res) => {
-    store.getNotes().then((notes) => {
-        return res.json(notes);
-    })
-    .catch((err) => res.status(500).json(err));
-});
+// GET route for retrieving all the notes
+router.get('/notes', (req, res) => {
+    readFromFile('./db/db.json').then((data) => res.json(JSON.parse(data)));
+})
 
-//POST /api/notes receives new notes and adds to db.json
+// POST route  for submitting 
 router.post('/notes', (req, res) => {
-    store.addNote(res.json(note)).catch((err) => res.status(500).json(err));
-});
+    const { title, text } = req.body;
+    if (title && text) {
+        const newNote = {
+            title,
+            text,
+            id: uuid(),
+        };
+        // Read JSON file and append new note
+        readAndAppend(newNote, './db/db.json');
+
+        const response = {
+            status: 'success',
+            body: newNote,
+        };
+
+        res.json(response);
+    } else {
+        res.json('Error creating a new note');
+    }
+})
 
 
-
-
-//DELETE request /api/notes/:id
+//DELETE request
 router.delete('/notes/:id', (req, res) => {
     console.log(req.params.id);
     deleteNote(req.params.id, './db/db.json');
