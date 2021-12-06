@@ -7,7 +7,7 @@ Application that allows you to write and save notes using express.js on the back
 
 Note Taker application that is deployed with Heroku that uses express.js and JSON files to write and save data. 
 
-[Heroku Deployed Site]()
+[Heroku Deployed Site](https://git.heroku.com/coyne-note-taker.git)
 
 ## Table of Contents
 -------------------
@@ -21,8 +21,7 @@ Note Taker application that is deployed with Heroku that uses express.js and JSO
 Write, Save, and Delete notes using express.js and JSON.
 
 ## Demo
----------
-  ### Screenshots
+--------
 
   ### Videos
   [noteTaker.mp4](noteTaker.mp4)
